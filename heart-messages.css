@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 50% 40%,
+    #0b1230 0%,
+    #050814 55%,
+    #01030a 100%
+  );
+  font-family: "Quicksand", sans-serif;
+}
+canvas {
+  display: block;
+}
+.hint {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(1.4rem, 3.2vw, 1.5rem);
+  color: #cfe2ff;
+  text-shadow:
+    0 0 14px rgba(96, 165, 250, 0.7),
+    0 0 30px rgba(59, 130, 246, 0.4);
+  letter-spacing: 0.8px;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeInHint 2.5s ease forwards 0.6s;
+}
+@keyframes fadeInHint {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, 0);
+    filter: blur(0);
+  }
+}
